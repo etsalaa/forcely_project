@@ -1,0 +1,43 @@
+package forcely;
+
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
+
+public class CustomerService {
+    
+    public void registerCustomer(Customer customer) throws Exception {
+            DB db = new DB();
+            Connection con = null;
+            String sql = "INSERT INTO Customer (firstname, lastname, phone, street, area, postalcode, email) VALUES (?, ?, ?, ?, ?, ?, ?);";
+            try {
+
+            con = db.getConnection();
+            PreparedStatement stmt = con.prepareStatement(sql);
+            stmt.setString(1, customer.getFirstname());
+            stmt.setString(2, customer.getLastname());
+            stmt.setString(3, customer.getPhone());
+            stmt.setString(4, customer.getStreet());
+            stmt.setString(5, customer.getArea());
+            stmt.setString(6, customer.getPostalcode());
+            stmt.setString(7, customer.getEmail());
+            
+            stmt.executeUpdate();
+
+            stmt.close();
+            db.close();
+
+        } catch (Exception e) {
+            throw e;
+        } finally {
+            try {
+                db.close();
+            } catch (Exception e) {
+
+            }
+
+        }
+
+    }
+
+}
