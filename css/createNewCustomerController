@@ -1,0 +1,98 @@
+html, body {
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #fff;
+    color: #333;
+    font-size: 17px;
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+h1{
+  margin-top: 70px;
+}
+
+.page-header {
+    display: flex;
+    flex-direction: column;
+}
+
+.results {
+    align-items: center;   /* Οριζόντιο κεντράρισμα */
+    text-align: center;    /* Κείμενο στο κέντρο */
+}
+
+
+/* ---- Απαλό Placeholder ---- */
+.register-section input[type="text"]::placeholder {
+  color: #999;
+  font-weight: normal;
+  opacity: 1;
+}
+
+
+.complete-registration {
+  background-color: #0f4e40;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 14px 24px;
+  margin-top: 200px;
+}
+
+.center-button-container {
+  display: flex;
+  justify-content: center;
+  min-width: 100px;
+  gap: 50px;            /* απόσταση ανάμεσα στα κουμπιά */
+  margin-top: 0px;
+  flex-wrap: wrap;      /* για κινητά */
+}
+
+.alert-danger {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+  padding: 10px 10px;
+  border-radius: 8px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  margin-left: 20px;
+  margin-right: 20px;
+  font-size: 12px;
+}
+
+
+
+.btn:hover {
+    background-color: #0b3a33;
+}
+
+/* ======== TOPBAR ======== */
+.topbar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background: #0f4e40;
+  height: 50px;
+  padding: 0 50px;
+  position: sticky;
+  top: 0;
+  z-index: 150;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.topbar a {
+  color: white;
+  font-weight: bold;
+  margin-left: 15px;
+  font-size: 20px;
+}
