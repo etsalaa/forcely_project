@@ -12,7 +12,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Create New Customer">
 	<title>Καταχώρηση Νέου Πελάτη</title>
-  <link rel="stylesheet" href="<%=request.getContextPath() %>/css/createNewCustomer.css">
+  <link rel="stylesheet" href="<%=request.getContextPath() %>/css/createNewCustomerController.css">
 </head>
 <body>
 	<%@ include file="topbar_forcely.jsp" %>
@@ -25,40 +25,60 @@
     String postalcode = request.getParameter("postalcode");
     String email = request.getParameter("email");
 	
+    
+    if (firstname != null) {
+        firstname = new String(firstname.getBytes("ISO-8859-1"), "UTF-8");
+    }
+
+    if (lastname != null) {
+        lastname = new String(lastname.getBytes("ISO-8859-1"), "UTF-8");
+    }
+
+    if (street != null) {
+        street = new String(street.getBytes("ISO-8859-1"), "UTF-8");
+    }
+
+    if (area != null) {
+        area = new String(area.getBytes("ISO-8859-1"), "UTF-8");
+    }
+
+
 	try{
 
 	Customer customer = new Customer(firstname, lastname, phone, street, area, postalcode, email);
     CustomerService cService = new CustomerService();
     cService.registerCustomer(customer);
 %>
+    <div class="results">
 		<div class="page-header">
-			<h2>Ο πελάτης καταχωρήθηκε επιτυχώς!</h2>
+			<h1>Ο πελάτης καταχωρήθηκε επιτυχώς!</h1>
+        </div>
 
-			<div class="center-button-container">
-            <div class="center-button">
-                <a href="../checkout/checkout.html" class="complete-registration">Πίσω στο καλάθι</a>
-            </div>
-            <div class="center-button">
-                <a href="../menu/menu.html" class="complete-registration">Πίσω στο μενού</a>
-            </div>
-        
-		</div>
+                <div class="center-button-container">
+                   <a href="checkout.jsp" class="complete-registration">Πίσω στο checkout</a>
+                   <a href="menu.html" class="complete-registration">Πίσω στο μενού</a>
+                </div>
+
+    </div>
 <%
         } catch (Exception e) {
 %>
+        <div class="results">
         <div class="page-header">
-            <h2>Registration Form has errors</h2>
+            <h1>Registration Form has errors</h1>
         </div>
 
-        <div class="alert alert-danger" role="alert">
+        <div class="alert-danger" role="alert">
             <p><%= e.getMessage() %></p>
         </div>
 
         <p>
             <a href="createNewCustomer.jsp" class="complete-registration">
-                <span class="glyphicon glyphicon-chevron-left"></span> Back to the form
+                <span class="glyphicon glyphicon-chevron-left"></span> Πίσω στην φόρμα καταχώρησης νέου πελάτη
             </a>
         </p>
+
+        </div>
 <%
         }
 %>
