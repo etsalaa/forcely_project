@@ -83,7 +83,7 @@ if (keyword == null || keyword.length() == 0) {
 
     <div class="col-xs-12" style="padding-bottom: 20px;">
     
-		<h1>1. Στοιχεία Πελάτη</h1>
+		<h3>1. Στοιχεία Πελάτη</h3>
 
     <form action="checkout.jsp" method="get" class="form-horizontal">
     <div class="form-group">
