@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Μενού Συστήματος</title>
+    <link rel="stylesheet" href="css/menu.css">
+</head>
+<body>
+
+<div class="title">FORCELY</div>
+
+<div class="menu">
+    <button onclick="selectFunction(this, 'searchProduct.jsp')">Αναζήτηση Προϊόντων</button>
+    <button onclick="selectFunction(this, 'showCart.jsp')">Καταχώρηση Παραγγελίας</button>
+    <button onclick="selectFunction(this, 'createNewCustomer.jsp')">Καταχώρηση Νέου Πελάτη</button>
+    <button onclick="selectFunction(this, 'picking.jsp')">Συλλογή Παραγγελίας</button>
+</div>
+
+<div class="footer-text">MAY THE FORCE BE WITH YOU</div>
+
+<script>
+    function selectFunction(button, page) {
+        // Καθαρίζουμε προηγούμενη ενεργή επιλογή
+        document.querySelectorAll('.menu button').forEach(btn => btn.classList.remove('active'));
+        // Σημαίνουμε το τρέχον κουμπί
+        button.classList.add('active');
+        // Πηγαίνουμε στη σελίδα
+        window.location.href = page;
+    }
+</script>
+
+
+</body>
+</html>
