@@ -1,53 +1,57 @@
+html, body {
+    min-height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+
 body {
-  background-color: #fff;
-  color: #333;
-  font-family: Arial, sans-serif;
-  align-items: center;
-  margin: 0;
+    background-color: #fff;
+    color: #333;
 }
 
 h1 {
   text-align: center;
   color: #0f4e40;
   margin-bottom: 30px;
-  margin-top: 25px; 
+  margin-top: 25px;
 }
 
-/* ======== FORM CONTAINER ======== */
+
+/* Container φόρμας */
 .register-container {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  left: 0;
-  right: 0;
-  margin: 0 auto;
-  max-width: 500px;
+width: 100%;
+justify-content: center;
+margin-bottom: 40px;
 }
 
 .register-section {
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  padding: 25px;
-  background-color: #fafafa;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+background: #ffffff;
+width: 100%;
+max-width: 600px;
+padding: 25px 30px 30px;
+border-radius: 10px;
+box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
+/* Labels & inputs */
 .register-section label {
-  display: block;
-  margin-bottom: 16px;
-  font-size: 15px;
-  width: 100%;
+display: flex;
+flex-direction: column;
+margin-bottom: 15px;
+font-size: 14px;
+}
+
+.register-section label strong {
+margin-bottom: 6px;
 }
 
 .register-section input[type="text"] {
-  display: block;
-  width: 400px;
-  margin-top: 5px;
-  padding: 8px;
-  font-size: 14px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-sizing: border-box;
+padding: 10px 12px;
+border: 1px solid #ccc;
+border-radius: 6px;
+font-size: 14px;
+transition: border-color 0.2s, box-shadow 0.2s;
 }
 
 /* ---- Απαλό Placeholder ---- */
@@ -57,23 +61,20 @@ h1 {
   opacity: 1;
 }
 
-.center-button {
-  text-align: center;
-  margin-top: 20px;
-}
-
 .complete-registration {
-  display: inline-block;
   background-color: #0f4e40;
   color: #fff;
-  padding: 12px 30px;
-  font-weight: bold;
-  border-radius: 6px;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.3s;
   text-decoration: none;
 }
 
-.register-section .submit-btn:hover {
-  background-color: #136755;
+.btn:hover {
+    background-color: #0b3a33;
 }
 
 /* ======== TOPBAR ======== */
