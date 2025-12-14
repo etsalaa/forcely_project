@@ -40,4 +40,94 @@ public class CustomerService {
 
     }
 
+    public List<Customer> getCustomers() throws Exception {
+
+        List<Customer> customers = new ArrayList<Customer>();
+
+        DB db = new DB();
+        Connection con = null;
+        String query = "SELECT * FROM Customer ORDER BY lastname, firstname;";
+        try {
+
+            con = db.getConnection();
+            PreparedStatement stmt = con.prepareStatement(query);
+
+            ResultSet rs = stmt.executeQuery();
+
+            while (rs.next()) {
+                customers.add(new Customer(rs.getString("Customer.firstname"),
+                        rs.getString("Customer.lastname"),
+                        rs.getString("Customer.phone"),
+                        rs.getString("Customer.street"),
+                        rs.getString("Customer.area"),
+                        rs.getString("Customer.postalcode"),
+                        rs.getString("Customer.email")));
+            }
+
+            rs.close();
+            stmt.close();
+            db.close();
+
+            return customers;
+
+        } catch (Exception e) {
+            throw e;
+        } finally {
+            try {
+                db.close();
+            } catch (Exception e) {
+
+            }
+
+        }
+
+    }
+
+
+    public List<Customer> searchCustomersByLastname(String lastname) throws Exception {
+        List<Customer> customers = new ArrayList<Customer>();
+
+        DB db = new DB();
+        Connection con = null;
+        String query = "SELECT * FROM Customer WHERE lastname=? ORDER BY firstname;";
+
+        try {
+            con = db.getConnection();
+            PreparedStatement stmt = con.prepareStatement(query);
+
+            // setting parameter
+            stmt.setString(1, lastname);
+
+            ResultSet rs = stmt.executeQuery();
+
+            while (rs.next()) {
+                customers.add(new Customer(rs.getString("Customer.firstname"),
+                    rs.getString("Customer.lastname"),
+                    rs.getString("Customer.phone"),
+                    rs.getString("Customer.street"),
+                    rs.getString("Customer.area"),
+                    rs.getString("Customer.postalcode"),
+                    rs.getString("Customer.email")));
+            }
+
+            rs.close();
+            stmt.close();
+            db.close();
+
+            return customers;
+            
+        } catch (Exception e) {
+            throw e;
+        } finally {
+            try {
+                db.close();
+            } catch (Exception e) {
+                
+            }
+        }
+
+	}
+
+
+
 }
