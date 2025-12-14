@@ -1,17 +1,18 @@
 package forcely;
 
 public class Customer {
-    
+    private int customerId;
     private String firstname;
-	  private String lastname;
+    private String lastname;
     private String phone;     
     private String street;
     private String area;
     private String postalcode;
-   	private String email;
+    private String email;
 
-
-    public Customer(String firstname, String lastname, String phone, String street, String area, String postalcode, String email) {        
+    // Constructor χωρίς customerId
+    public Customer(String firstname, String lastname, String phone, String street,
+                    String area, String postalcode, String email) {
         this.firstname = firstname;
         this.lastname = lastname;
         this.phone = phone;
@@ -19,6 +20,11 @@ public class Customer {
         this.area = area;
         this.postalcode = postalcode;
         this.email = email;
+    }
+
+    // Setters - Getters
+    public int getCustomerId() {
+        return customerId;
     }
 
     public String getFirstname() {
@@ -44,7 +50,7 @@ public class Customer {
     public void setPhone(String phone) {
         this.phone = phone;
     }
-    
+
     public String getStreet() {
         return street;
     }
@@ -52,7 +58,7 @@ public class Customer {
     public void setStreet(String street) {
         this.street = street;
     }
-    
+
     public String getArea() {
         return area;
     }
@@ -60,7 +66,7 @@ public class Customer {
     public void setArea(String area) {
         this.area = area;
     }
-    
+
     public String getPostalcode() {
         return postalcode;
     }
@@ -76,5 +82,4 @@ public class Customer {
     public void setEmail(String email) {
         this.email = email;
     }
-
 }
