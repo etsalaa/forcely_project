@@ -35,6 +35,11 @@ if (keyword == null || keyword.length() == 0) {
 	<title>Καταχώρηση Παραγγελίας</title>
 
   <link rel="stylesheet" href="<%=request.getContextPath() %>/css/checkout.css">
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="<%=request.getContextPath() %>/css/bootstrap.min.css">		
+  <!-- Bootstrap Optional theme -->
+  <link rel="stylesheet" href="<%=request.getContextPath() %>/css/bootstrap-theme.min.css">
+
 </head>
 <body>
 
@@ -105,7 +110,7 @@ if (keyword == null || keyword.length() == 0) {
         <div class="table-responsive">
 
             <table class="table table-bordered table-hover table-condensed">
-              <thread>
+              <thead>
 
                 <tr class="table-header">
                     <th>A/A</th>
@@ -115,7 +120,7 @@ if (keyword == null || keyword.length() == 0) {
                     <th>Περιοχή</th>
                     <th class="text-center" style="width: 120px;">Επιλογή</th>
                 </tr>
-              </thread>
+              </thead>
               <tbody>
 
 <%
