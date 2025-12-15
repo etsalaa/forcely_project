@@ -1,4 +1,11 @@
-package forcely;      
+package forcely;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ProductService {
  
@@ -49,7 +56,30 @@ public class ProductService {
             }
             
         }
-
-
     }
+
+    getPriceByProductId
+// allagh
+public class ProductService {
+
+    // Μέθοδος που παίρνει την τιμή του προϊόντος από τη βάση με το productId
+    public static double getPriceByProductId(int productId) {
+        double price = 0.0;
+        
+        String sql = "SELECT price FROM Product WHERE productId = ?";
+        try (Connection con = DB.getConnection(); 
+             PreparedStatement stmt = con.prepareStatement(sql)) {
+            stmt.setInt(1, productId);
+            ResultSet rs = stmt.executeQuery();
+            if (rs.next()) {
+                price = rs.getDouble("price");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return price;
+    }
+}
+
 }
