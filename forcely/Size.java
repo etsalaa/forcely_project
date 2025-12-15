@@ -1,0 +1,27 @@
+public enum Size {
+    XXS
+    XS,
+    S,
+    M,
+    L,
+    XL,
+    XXL,
+    XXXL,
+    OZ_8,
+    OZ_10,
+    OZ_12,
+    OZ_14,
+    OZ_16
+    CM_100,
+    CM_110,
+    CM_120,
+    CM_130,
+    CM_140,
+    CM_150,
+    CM_160,
+    CM_170,
+    CM_180,
+    CM_190,
+    CM_200,
+    CM_210,
+}
